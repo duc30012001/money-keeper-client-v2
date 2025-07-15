@@ -52,7 +52,7 @@ export default function CMSLayout({ children }: { children: React.ReactNode }) {
                         )}
                         actionsRender={() => [<AppLocale key="app-locale" />]}
                         avatarProps={{
-                            className: 'bg-orange-500',
+                            className: '!bg-orange-500',
                             icon: 'VD',
                             render: (props, dom) => {
                                 return (

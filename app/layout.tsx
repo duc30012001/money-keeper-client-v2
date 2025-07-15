@@ -1,3 +1,4 @@
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import React from 'react';
@@ -73,7 +74,7 @@ export default async function LocaleLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                {children}
+                <AntdRegistry>{children}</AntdRegistry>
             </body>
         </html>
     );

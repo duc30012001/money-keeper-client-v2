@@ -3,7 +3,7 @@
 import { PageContainer, ProCard } from '@ant-design/pro-components';
 import { Button } from 'antd';
 
-export default function TransactionPage() {
+export default function AccountPage() {
     return (
         <PageContainer
             token={
@@ -16,7 +16,7 @@ export default function TransactionPage() {
                     Create
                 </Button>,
             ]}
-            title="Transactions"
+            title="Accounts"
         >
             <ProCard>
                 <div />
