@@ -4,6 +4,22 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async headers() {
+        return [
+            {
+                source: '/:path*',
+                headers: [{ key: 'X-Frame-Options', value: 'SAMEORIGIN' }],
+            },
+        ];
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/api/v1/:path*',
+                destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/:path*`,
+            },
+        ];
+    },
     images: {
         remotePatterns: [
             {

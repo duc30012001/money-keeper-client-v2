@@ -1,8 +1,124 @@
 {
+    "auth": {
+        "signIn": "Đăng nhập",
+        "dontHaveAccount": "Chưa có tài khoản?",
+        "alreadyHaveAccount": "Đã có tài khoản?",
+        "register": "Đăng ký",
+        "registerHere": "Đăng ký tại đây"
+    },
+    "validation": {
+        "emailFormat": "Vui lòng nhập đúng định dạng Email!",
+        "select": "Vui lòng chọn thông tin!",
+        "radio": "Vui lòng chọn thông tin!",
+        "input": "Vui lòng nhập thông tin!",
+        "file": "Vui lòng chọn file!",
+        "url": "Đường dẫn không hợp lệ!",
+        "passwordMisMatch": "Mật khẩu không khớp!",
+        "passwordFormat": "Mật khẩu bao gồm chữ cái viết hoa và có ít nhất 6 kí tự",
+        "unique": "Dữ liệu không được trùng nhau",
+        "mustBeNumber": "Must be number",
+        "min": "Tối thiểu {number} ký tự",
+        "minValid": "Tối thiểu {number} ký tự hợp lệ",
+        "minWithValid": "Tối thiểu {number} ký tự hợp lệ",
+        "max": "Tối đa {number} ký tự",
+        "numberMin": "Tối thiểu {number}",
+        "numberMax": "Tối đa {number}",
+        "image": "Xin vui lòng chọn ảnh hợp lệ",
+        "video": "Xin vui lòng chọn video hợp lệ",
+        "phoneNumber": "Số điện thoại phải gồm đúng 10 số",
+        "inputPhoneNumber": "Nhập số điện thoại",
+        "selectUsedStatus": "Chọn trạng thái sử dụng",
+        "inputNumberGreaterOrEqualThan0": "Nhập số lớn hơn hoặc bằng 0",
+        "fromCannotBeGreaterThanTo": "Từ không được lớn hơn đến"
+    },
+    "common": {
+        "loading": "Đang tải...",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "delete": "Xóa",
+        "edit": "Chỉnh sửa",
+        "view": "Xem",
+        "create": "Thêm mới",
+        "search": "Tìm kiếm",
+        "noData": "Không có dữ liệu",
+        "yes": "Có",
+        "no": "Không",
+        "description": "Mô tả",
+        "createdAt": "Ngày tạo",
+        "updatedAt": "Ngày cập nhật"
+    },
+    "table": {
+        "showTotal": "{from} - {to} trên {total}"
+    },
+    "status": {
+        "title": "Trạng thái",
+        "active": "Kích hoạt",
+        "inactive": "Không kích hoạt"
+    },
     "language": {
         "english": "English",
-        "label": "Ngôn ngữ",
+        "title": "Ngôn ngữ",
         "vietnamese": "Tiếng Việt",
         "select": "Chọn ngôn ngữ"
+    },
+    "user": {
+        "title": "Người dùng",
+        "name": "Tên người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "create": "Thêm người dùng",
+        "role": {
+            "title": "Vai trò",
+            "admin": "Admin",
+            "user": "Người dùng"
+        },
+        "active": "Kích hoạt"
+    },
+    "icon": {
+        "title": "Biểu tượng",
+        "select": "Chọn biểu tượng"
+    },
+    "category": {
+        "title": "Danh mục",
+        "select": "Chọn danh mục",
+        "name": "Tên danh mục",
+        "create": "Thêm danh mục",
+        "parent": "Danh mục cha",
+        "type": "Loại danh mục"
+    },
+    "accountType": {
+        "title": "Loại tài khoản",
+        "select": "Chọn loại tài khoản",
+        "name": "Tên loại tài khoản",
+        "create": "Thêm loại tài khoản"
+    },
+    "account": {
+        "title": "Tài khoản",
+        "select": "Chọn tài khoản",
+        "name": "Tên tài khoản",
+        "create": "Thêm tài khoản",
+        "balance": "Số dư",
+        "initialBalance": "Số dư ban đầu",
+        "count": "Số lượng tài khoản"
+    },
+    "transaction": {
+        "title": "Giao dịch",
+        "select": "Chọn giao dịch",
+        "create": "Thêm giao dịch",
+        "amount": "Số tiền",
+        "date": "Ngày giao dịch",
+        "type": {
+            "income": "Thu nhập",
+            "expense": "Chi phí",
+            "transfer": {
+                "title": "Chuyển khoản",
+                "from": "Từ tài khoản",
+                "to": "Đến tài khoản"
+            }
+        }
+    },
+    "dashboard": {
+        "title": "Thống kê"
     }
 }

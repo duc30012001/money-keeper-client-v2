@@ -49,8 +49,8 @@ export default function AppLocale(props: DropdownProps) {
                 items: options.map((option) => ({
                     key: option.value,
                     label: option.label,
-                    onClick: () => switchLocale(option.value),
                 })),
+                onClick: ({ key }) => switchLocale(key as Locale),
             }}
         >
             <Button>{currentLocale?.label}</Button>

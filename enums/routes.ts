@@ -15,38 +15,68 @@ export enum AppRoute {
     TRANSACTIONS = '/transactions',
     ACCOUNT_TYPES = '/account-types',
     ACCOUNTS = '/accounts',
+    BUDGETS = '/budgets',
     CATEGORIES = '/categories',
     ACTION_TYPES = '/action-types',
     ICONS = '/icons',
     USERS = '/users',
-    SIGNIN = '/',
+    SIGN_IN = '/sign-in',
+    REGISTER = '/register',
     FORBIDDEN = '/forbidden',
-    NOTFOUND = '/not-found',
-    BUDGETS = '/budgets',
+    NOT_FOUND = '/not-found',
 }
 
 export interface SidebarItem {
     title: string;
+    name: string;
     href: AppRoute;
     icon: LucideIcon;
     role?: UserRole;
 }
 
 export const SIDEBAR_ITEMS: SidebarItem[] = [
-    { title: 'Dashboard', href: AppRoute.DASHBOARD, icon: ListCheck },
+    {
+        title: 'Dashboard',
+        name: 'dashboard.title',
+        href: AppRoute.DASHBOARD,
+        icon: ListCheck,
+    },
     {
         title: 'Transactions',
+        name: 'transaction.title',
         href: AppRoute.TRANSACTIONS,
         icon: CreditCard,
     },
-    { title: 'Accounts', href: AppRoute.ACCOUNTS, icon: User },
-    { title: 'Account Types', href: AppRoute.ACCOUNT_TYPES, icon: Layers },
-    { title: 'Categories', href: AppRoute.CATEGORIES, icon: Tag },
+    {
+        title: 'Accounts',
+        name: 'account.title',
+        href: AppRoute.ACCOUNTS,
+        icon: User,
+    },
+    {
+        title: 'Account Types',
+        name: 'accountType.title',
+        href: AppRoute.ACCOUNT_TYPES,
+        icon: Layers,
+    },
+    {
+        title: 'Categories',
+        name: 'category.title',
+        href: AppRoute.CATEGORIES,
+        icon: Tag,
+    },
     {
         title: 'Icons',
+        name: 'icon.title',
         href: AppRoute.ICONS,
         icon: LayoutGrid,
         role: UserRole.ADMIN,
     },
-    { title: 'Users', href: AppRoute.USERS, icon: Users, role: UserRole.ADMIN },
+    {
+        title: 'Users',
+        name: 'user.title',
+        href: AppRoute.USERS,
+        icon: Users,
+        role: UserRole.ADMIN,
+    },
 ];

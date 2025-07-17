@@ -1,6 +1,13 @@
+import AppToast from '@/components/app-toast';
+import { appConfig } from '@/constants/app';
+import { authOptions } from '@/modules/auth/next-auth';
+import ReactQueryProviders from '@/providers/react-query';
+import SessionProvider from '@/providers/session-provider';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
 import localFont from 'next/font/local';
+import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
 import './globals.css';
 
@@ -15,19 +22,23 @@ const geistMono = localFont({
     weight: '100 900',
 });
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+const {
+    url: appUrl,
+    logo: appIcon,
+    title: appTitle,
+    description: appDescription,
+} = appConfig;
 
 export const metadata: Metadata = {
-    title: 'Money Keeper',
-    description:
-        'Money Keeper App - Track your finances, manage your money, and achieve your financial goals',
+    title: appTitle,
+    description: appDescription,
     icons: {
-        icon: '/images/icon.png',
-        shortcut: '/images/icon.png',
-        apple: '/images/icon.png',
+        icon: appIcon,
+        shortcut: appIcon,
+        apple: appIcon,
         other: {
             rel: 'icon',
-            url: '/images/icon.png',
+            url: appIcon,
         },
     },
     // Open Graph metadata
@@ -35,10 +46,9 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: appUrl,
-        title: 'Money Keeper',
-        description:
-            'Money Keeper App - Track your finances, manage your money, and achieve your financial goals',
-        siteName: 'Money Keeper',
+        title: appTitle,
+        description: appDescription,
+        siteName: appTitle,
         images: [
             {
                 url: appUrl + '/images/background.jpg',
@@ -51,9 +61,8 @@ export const metadata: Metadata = {
     // Twitter metadata
     twitter: {
         card: 'summary_large_image',
-        title: 'Money Keeper',
-        description:
-            'Money Keeper App - Track your finances, manage your money, and achieve your financial goals',
+        title: appTitle,
+        description: appDescription,
         images: [appUrl + '/images/background.jpg'],
         creator: '@vietduc_dev',
     },
@@ -69,12 +78,22 @@ export default async function LocaleLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const session = await getServerSession(authOptions);
+
     return (
         <html lang="en">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <AntdRegistry>{children}</AntdRegistry>
+                <AntdRegistry>
+                    <NextTopLoader showSpinner={false} />
+                    <ReactQueryProviders>
+                        <SessionProvider session={session}>
+                            {children}
+                            <AppToast />
+                        </SessionProvider>
+                    </ReactQueryProviders>
+                </AntdRegistry>
             </body>
         </html>
     );

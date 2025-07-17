@@ -25,3 +25,13 @@ body {
         text-wrap: balance;
     }
 }
+
+.ant-form-item-label > label {
+    @apply font-semibold;
+}
+
+.lucide {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.75;
+}

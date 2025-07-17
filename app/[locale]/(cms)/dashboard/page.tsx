@@ -1,18 +1,16 @@
 'use client';
 
+import { CreateButton } from '@/components/ui/button/create-button';
 import { PageContainer, ProCard } from '@ant-design/pro-components';
-import { DatePicker } from 'antd';
+import { useTranslations } from 'next-intl';
 
 export default function DashboardPage() {
+    const messages = useTranslations();
+
     return (
         <PageContainer
-            token={
-                {
-                    // paddingInlinePageContainerContent: 25,
-                }
-            }
-            extra={[<DatePicker.RangePicker key={'1'} />]}
-            title="Dashboard"
+            extra={[<CreateButton key={'create'} />]}
+            title={messages('dashboard.title')}
         >
             <ProCard>
                 <div />

@@ -1,8 +1,124 @@
 {
+    "auth": {
+        "signIn": "Sign in",
+        "dontHaveAccount": "Don't have an account?",
+        "alreadyHaveAccount": "Already have an account?",
+        "register": "Register",
+        "registerHere": "Register here"
+    },
+    "validation": {
+        "emailFormat": "Please enter a valid email!",
+        "select": "Please select information!",
+        "radio": "Please choose information!",
+        "input": "Please enter information!",
+        "file": "File is required!",
+        "url": "Please enter a valid link format!",
+        "passwordMisMatch": "Password mis match!",
+        "passwordFormat": "Password must contain 1 uppercase character and at least 6 character",
+        "unique": "Data must not be duplicated",
+        "mustBeNumber": "Must be number",
+        "min": "Must be min {number} characters",
+        "minValid": "Must be min {number} valid characters",
+        "max": "Must be less than {number} characters",
+        "numberMin": "Must be greater than {number} ",
+        "numberMax": "Must be less than {number}",
+        "image": "Please select a image file",
+        "video": "Please select a video file",
+        "phoneNumber": "Phone number must be 10 digits",
+        "inputPhoneNumber": "Enter phone number",
+        "selectUsedStatus": "Select used status",
+        "minWithValid": "Must be min at least {number} valid characters",
+        "inputNumberGreaterOrEqualThan0": "Must be greater than or equal to 0",
+        "fromCannotBeGreaterThanTo": "From cannot be greater than to"
+    },
+    "common": {
+        "loading": "Loading...",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "view": "View",
+        "create": "Create",
+        "search": "Search",
+        "noData": "No data",
+        "yes": "Yes",
+        "no": "No",
+        "description": "Description",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at"
+    },
+    "table": {
+        "showTotal": "{from} - {to} of {total}"
+    },
+    "status": {
+        "title": "Status",
+        "active": "Active",
+        "inactive": "Inactive"
+    },
     "language": {
         "english": "English",
-        "label": "Language",
+        "title": "Language",
         "vietnamese": "Tiếng Việt",
         "select": "Select language"
+    },
+    "user": {
+        "title": "User",
+        "name": "User name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "create": "Create user",
+        "role": {
+            "title": "Role",
+            "admin": "Admin",
+            "user": "User"
+        },
+        "active": "Kích hoạt"
+    },
+    "icon": {
+        "title": "Icon",
+        "select": "Select icon"
+    },
+    "category": {
+        "title": "Category",
+        "select": "Select category",
+        "name": "Category name",
+        "create": "Create category",
+        "parent": "Parent category",
+        "type": "Category type"
+    },
+    "accountType": {
+        "title": "Account type",
+        "select": "Select account type",
+        "name": "Account type name",
+        "create": "Create account type"
+    },
+    "account": {
+        "title": "Account",
+        "select": "Select account",
+        "name": "Account name",
+        "create": "Create account",
+        "balance": "Balance",
+        "initialBalance": "Initial balance",
+        "count": "Account count"
+    },
+    "transaction": {
+        "title": "Transaction",
+        "select": "Select transaction",
+        "create": "Create transaction",
+        "amount": "Amount",
+        "date": "Transaction date",
+        "type": {
+            "income": "Income",
+            "expense": "Expense",
+            "transfer": {
+                "title": "Transfer",
+                "from": "From account",
+                "to": "To account"
+            }
+        }
+    },
+    "dashboard": {
+        "title": "Dashboard"
     }
 }

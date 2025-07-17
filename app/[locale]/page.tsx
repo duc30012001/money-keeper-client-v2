@@ -1,12 +1,8 @@
-import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { AppRoute } from '@/enums/routes';
+import { redirect } from '@/i18n/navigation';
+import { getLocale } from 'next-intl/server';
 
-export default function HomePage() {
-    const t = useTranslations('HomePage');
-    return (
-        <div>
-            <h1>{t('title')}</h1>
-            <Link href="/about">{t('about')}</Link>
-        </div>
-    );
+export default async function HomePage() {
+    const locale = await getLocale();
+    redirect({ href: AppRoute.DASHBOARD, locale });
 }

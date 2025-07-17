@@ -1,22 +1,16 @@
 'use client';
 
+import { CreateButton } from '@/components/ui/button/create-button';
 import { PageContainer, ProCard } from '@ant-design/pro-components';
-import { Button } from 'antd';
+import { useTranslations } from 'next-intl';
 
-export default function AccountPage() {
+export default function AccountsPage() {
+    const messages = useTranslations();
+
     return (
         <PageContainer
-            token={
-                {
-                    // paddingInlinePageContainerContent: 25,
-                }
-            }
-            extra={[
-                <Button key={'1'} type="primary">
-                    Create
-                </Button>,
-            ]}
-            title="Accounts"
+            extra={[<CreateButton key={'create'} />]}
+            title={messages('account.title')}
         >
             <ProCard>
                 <div />

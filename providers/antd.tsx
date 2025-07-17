@@ -10,7 +10,12 @@ import { PropsWithChildren } from 'react';
 function AntdProvider({ children }: PropsWithChildren) {
     const { locale } = useLocale();
     return (
-        <ConfigProvider locale={locale === Locale.VI ? viVN : enUS}>
+        <ConfigProvider
+            locale={locale === Locale.VI ? viVN : enUS}
+            form={{
+                requiredMark: 'optional',
+            }}
+        >
             {children}
         </ConfigProvider>
     );
