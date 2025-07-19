@@ -88,10 +88,12 @@ export const authOptions: NextAuthOptions = {
             // }
 
             const data = getDataFromToken(accessToken);
-            session.user = {
-                id: data?.sub,
-                email: data?.email,
-            };
+            if (data) {
+                session.user = {
+                    id: data?.sub as string,
+                    email: data?.email,
+                };
+            }
 
             session.accessToken = accessToken;
             return session;

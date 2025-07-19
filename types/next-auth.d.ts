@@ -4,7 +4,7 @@ import { User } from '../modules/user/types/user';
 
 declare module 'next-auth' {
     interface Session {
-        user: User;
+        user: Pick<User, 'id' | 'email'>;
         accessToken: string;
         error?: string;
     }

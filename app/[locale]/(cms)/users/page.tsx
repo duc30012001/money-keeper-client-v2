@@ -2,10 +2,12 @@
 
 import { CreateButton } from '@/components/ui/button/create-button';
 import { EditButton } from '@/components/ui/button/edit-button';
-import { Screen } from '@/enums/common';
+import AppSearch from '@/components/ui/input/search';
+import { PageSize, Screen } from '@/enums/common';
+import { useFilter } from '@/hooks/use-filter';
 import { formatDate, formatNumber } from '@/lib/format';
 import { useUpdateUser, useUsersList } from '@/modules/user/hooks/use-users';
-import { User } from '@/modules/user/types/user';
+import { User, UserSearchParams } from '@/modules/user/types/user';
 import {
     PageContainer,
     ProColumns,
@@ -13,11 +15,19 @@ import {
 } from '@ant-design/pro-components';
 import { Switch } from 'antd';
 import { useTranslations } from 'next-intl';
+import { parseAsInteger, parseAsString } from 'nuqs';
 
 export default function UsersPage() {
     const messages = useTranslations();
+    const { filterValues, onChangePage, onSearch } =
+        useFilter<UserSearchParams>({
+            page: parseAsInteger.withDefault(1),
+            pageSize: parseAsInteger.withDefault(PageSize.MEDIUM),
+            keyword: parseAsString,
+            isActive: parseAsString,
+        });
 
-    const { data, isFetching, refetch } = useUsersList({});
+    const { data, isFetching, refetch } = useUsersList(filterValues);
     const updateMutation = useUpdateUser();
 
     const onActiveChange = (id: string, isActive: boolean) => {
@@ -80,36 +90,33 @@ export default function UsersPage() {
                 paddingBlockPageContainerContent: 10,
                 paddingInlinePageContainerContent: 20,
             }}
+            extra={[<CreateButton key={'create'} />]}
         >
             <ProTable<User>
                 search={false}
                 columns={columns}
-                columnsState={{
-                    onChange(value) {
-                        console.log('value: ', value);
-                    },
-                }}
                 rowKey="id"
-                toolbar={{
-                    actions: [<CreateButton key={'create'} />],
-                }}
                 dataSource={data?.data}
                 loading={isFetching}
                 options={{
-                    search: {
-                        placeholder: messages('common.search'),
-                    },
                     fullScreen: true,
                     reload: () => refetch(),
                 }}
                 scroll={{
                     x: Screen.XL,
                 }}
+                headerTitle={
+                    <AppSearch
+                        defaultValue={filterValues.keyword}
+                        onChange={onSearch}
+                    />
+                }
                 pagination={{
                     current: data?.meta?.page,
                     hideOnSinglePage: true,
                     pageSize: data?.meta?.pageSize,
                     total: data?.meta?.total,
+                    onChange: onChangePage,
                     showTotal: (total, [from, to]) =>
                         messages('table.showTotal', {
                             from: formatNumber(from),

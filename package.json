@@ -19,6 +19,7 @@
         "clsx": "^2.1.1",
         "dayjs": "^1.11.13",
         "jwt-decode": "^4.0.0",
+        "lodash": "^4.17.21",
         "lucide-react": "^0.525.0",
         "next": "14.2.30",
         "next-auth": "^4.24.11",
@@ -32,6 +33,7 @@
         "zustand": "^5.0.6"
     },
     "devDependencies": {
+        "@types/lodash": "^4.17.20",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
